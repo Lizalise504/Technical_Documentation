@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Technical Documentation</title>
+</head>
+<body>
+    <nav id="navbar">
+        <header><u>Learn CSS</u></header>
+        <ul>
+            <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+            <li><a href="#CSS_Syntax" class="nav-link">CSS Syntax</a></li>
+            <li><a href="#Selector" class="nav-link">Selector</a></li>
+            <li><a href="#How_to" class="nav-link">How To</a></li>
+            <li><a href="#Comments" class="nav-link">Comments</a></li>
+            <li><a href="#Colors" class="nav-link">Colors</a></li>
+            <li><a href="#Backgrounds" class="nav-link">Backgrounds</a></li>
+            <li><a href="#Borders" class="nav-link">Borders</a></li>
+            <li><a href="#Margins" class="nav-link">Margins</a></li>
+            <li><a href="#Padding" class="nav-link">Padding</a></li>
+            <li><a href="#Height_width" class="nav-link">Height Width</a></li>
+            <li><a href="#Box_model" class="nav-link">Box Model</a></li>
+            <li><a href="#Reference" class="nav-link">Reference</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">           
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <p>CSS is the language we use to style a Web page.</p>
+            <h3>What is CSS?</h3>
+            <ul>
+                <li>Css stands for Cascading Style Sheet</li>
+                <li>Css describes how HTML elements are to be displayed on screen, paper, or in other media</li>
+                <li>CSS saves a lot of work. It can cntrol the layout of multipleweb pages all at once</li>
+                <li>External stylesheets are stored in CSS files</li>
+            </ul>
+            <h3>Why use CSS</h3>
+            <p>CSS is used to define styles for your web pages, including the design, layout and variations in display for different devices and screen sizes</p>
+            <h5>For Example</h5>
+            <code>
+                body { 
+                    background-color: blue;
+                }
+            </code><br>
+            <code>
+                h1 { 
+                    color: blue;
+                    text-align: centre;
+                }
+            </code><br>
+            <code>
+                P { 
+                    font-family: verdana; 
+                    background-color: red;
+                }
+            </code>
+            <h3>CSS solved a big Problem</h3>
+            <p>HTML was NEVER intended to contain tags for formatting a web page!</p>
+            <p>HTML was created to describe the content of a web page, like:<br>
+                <code>&lt;h1&gt;This is Heading&lt;/h1&gt;</code><br>
+                <code>&lt;p&gt;This is a Paragraph&lt;/p&gt;</code>
+            </p>
+            <p>When tags like &lt;font&gt;,and color attributes were added to the HTML3.2 specification, it started a nightmare for web developers. Development of large websites, where fonts and colors information were added to every single page, became a long and expensive process</p>
+            <p>To solve this problem, the World Wide Web Consortium(W3C) created CSS</p>
+            <p>
+                CSS removed the style formatting from the HTML page
+            </p>
+            <h3>CSS Saves a Lot of Work</h3>
+            <p>
+                The style definitions are normally saved in external .css files
+            </p>
+            <p>
+                With an external stylesheet file, you can change the look of an entire website by changing just one file.
+            </p>
+        </section>
+        <section class="main-section" id="CSS_Syntax">
+            <header>CSS Syntax</header>
+            <p>
+                CSS rule consists of a selector and a declaration block.
+            </p>
+            <p>
+                The selector points to the HTML element you want to style. 
+            </p>
+            <p>
+                Each declaration includes a CSS property name and a value, separated by colons.
+            </p>
+            <p>
+                Thhe declaration block contains one or more declaratins separated by semicolns.
+            </p>
+            <p>
+                Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces
+            </p>
+            <h3>Example</h3>
+            <p>
+                In this example all &lt;p&gt; elements will be center-aligned, with a red text color:<br>
+                <code>
+                    p {
+                        color: red;<br>
+                        text-align: center;
+                    }
+                </code>
+            </p>
+            <h3>Example Explained</h3>
+            <ul>
+                <li>p is a selector in CSS (it points to the HTML element you want to style: &lt;p&gt;).</li>
+                <li>color is a property, and red is the property value</li>
+                <li>text-align is a propety, and center is the propety value</li>
+            </ul>
+        </section>
+        <section class="main-section" id="Selector">
+            <header>Selector</header>
+            <p>
+                CSS selectors are used to "find"(or select) the HMTL elements you want to style.
+            </p>
+            <p>
+                We can divide CSS selectors into five categories
+            </p>
+            <ol>
+                <li>Simple selectors (select elements based on name, id, class)</li>
+                <li>Combinator selectors (select elements based on a specific relationship between them)</li>
+                <li>Pseudo-class selectors (select elements based on a certain state)</li>
+                <li>Pseudo-elements selectors (select and style a part of an element)</li>
+                <li>Attribute-selectors (select elements based on an attribute or attribute value)</li>
+            </ol>
+            <h3>The CSS element Selector</h3>
+            <p>
+                The element selector selects HTML elements based on the element name
+            </p>
+            <h3>Example</h3>
+            <p>
+                Here, all &lt;p&gt; on the page will be center-aligned, with a red text color:<br>
+                <code>
+                    p {
+                        text-align: center;<br>
+                        color: red;<br>
+                    }
+                </code>
+            </p>
+            <h3>The CSS id Selector</h3>
+            <p>
+                The id selector uses the id attribute of an HTML element to select a specific element.
+            </p>
+            <p>
+                The id of an element is unique within a page, so the id selector is used to select one unique element.
+            </p>
+            <p>
+                To select an element with a specific id, write a hash(#) character, followed by the id of the element.
+            </p>
+            <h3>Example</h3>
+            <p>
+                The CSS rule below will be applied to the HTML element with id="para1":<br>
+                <code>
+                    #para1{
+                        text-align: center;<br>
+                        color: red;<br>
+                    }
+                </code>
+            </p>
+            <h3>The CSS class Selector</h3>
+            <p>
+                The class selector selects HTML elements with a specific class attribute.
+            </p>
+            <p>
+                To select elements with a specific class, write a period(.) character, followed by the class name.
+            </p>
+            <h3>Example</h3>
+            <p>
+                In this example all HTML elements with class="center" will be red and center-aligned:<br>
+                <code>
+                    .center{
+                        text-align: center;<br>
+                        color: red;
+                    }
+                </code>
+            </p>
+            <p>
+                You can also specify that only specific HTML elements should be affected by a class.
+            </p>
+            <h3>Example</h3>
+            <p>
+                In this example only &lt;p&gt; elements with class="center" will be red and center-aligned:<br>
+                <code>
+                    p.center {
+                        text-align: center;<br>
+                        color: red;<br>
+                    }
+                </code>
+            </p>
+            <p>
+                In this example the &lt;p&gt; element will be styled according to class="center" and to class="large":<br>
+                <code>
+                    &lt;p&gt; class="center large"><br>
+                        This paragraph refers to two classes.<br>
+                    &lt;/p&gt;
+                </code>
+            </p>
+            <h3>The CSS Universal Selector</h3>
+            <p>
+                The universal selector (*) selects all HTML elements on the page.
+            </p>
+            <h3>Example</h3>
+            <p>
+                The CSS rule below will affect every HTML element on the page:<br>
+                <code>
+                    * {
+                        text-align: center;<br>
+                        color: blue;
+                    }
+                </code>
+            </p>
+            <h3>The CSS Grouping Selector</h3>
+            <p>
+                The grouping selector selects all the HTML elements with the same style definitions.<br>
+                <code>
+                    h1, h2, p{
+                        text-align: center;<br>
+                        color: red;
+                    }
+                </code>
+            </p>
+        </section>
+        <section class="main-section" id="How_to">
+            <header>How To</header>
+            <p>
+                When a browser reads a style sheet, it will format the HTML document according to the information in the style sheet.
+            </p>
+            <h3>Three Ways to Insert CSS</h3>
+            <ul>
+                <li>External CSS</li>
+                <li>Internal CSS</li>
+                <li>Inline CSS</li>
+            </ul>
+            <h3>External CSS</h3>
+            <p>
+                With an external style sheet, you can change the look of an entire website by changing just one file.
+            </p>
+            <p>
+                Each HTML page must include a reference to the external style sheet file inside the &lt;link&gt; element, inside the head.<br>
+                <code>
+                    &lt;head&gt;<br>
+                    &lt;link rel="stylesheet" href="mystyle.css"&gt;<br>
+                    &lt;/head&gt;
+                </code>
+            </p>
+            <p>
+                An external style sheet can be written in any text editor, and must be saved with a .css extension
+            </p>
+            <p>
+                The external .css file should not contain any HTML tags.
+            </p>
+            <h3>Example of "mystyle.css"</h3>
+            <code>
+                body {
+                    background-color: lightblue;
+                }
+                <br>
+                h1 {
+                    color: navy;<br>
+                    margin-left: 20px;
+                }
+            </code>
+            <h3>Internal CSS</h3>
+            <p>
+                An internal style sheet may be used if one single HTML page has a unique style.
+            </p>
+            <p>
+                The internal style is defined inside the &lt;style&gt; element, inside the head section.<br>
+                <code>
+                    &lt;style&gt;<br>
+                    body {
+                        background-color: lightblue;
+                    }
+                    <br>
+                    h1 {
+                        color: navy;<br>
+                        margin-left: 20px;<br>
+                    }<br>
+                    &lt;/style&gt;
+                </code>
+            </p>
+            <h3>Inline CSS</h3>
+            <p>
+                An inline style may be used to apply a unique style for a single element.
+            </p>
+            <p>
+                To use inline styles, add the style attribute to the relevant element. The style attribute can contain any CSS property. Example:<br>
+                <code>
+                    &lt;h1 style="color:blue; text-align:center;"&gt;This is a Heading&lt;/h1&gt;<br>
+                    &lt;p style="color:red;"&gt;This is a paragraph.&lt;/p&gt;
+                </code>
+            </p>
+            <h3>Cascading Order</h3>
+            <p>
+                What style will be used when there is more than one style specified for an HTML element?
+            </p>
+            <p>
+                All the styles in a page will "cascade" into a new "virtual" style sheet by the following rules, where number one has the highest priority:
+            </p>
+            <ol>
+                <li>Inline style (inside an HTML element)</li>
+                <li>External and internal style sheets (in the head section)</li>
+                <li>Browser default</li>
+            </ol>
+            <p>
+                So, an inline style has the highest priority, and will override external and internal styles and browser defaults
+            </p>
+        </section>
+        <section class="main-section" id="Comments">
+            <header>Comments</header>
+            <p>
+                Comments are used to explain the code, and may help when you edit the source code at a later date.
+            </p>
+            <p>
+                Comments are ignored by browsers.
+            </p>
+            <p>
+                A CSS comment is placed inside the &lt;style&gt; element, and starts with /* and ends with */:<br>
+                <code>
+                    /*This is a single-line comment*/
+                    p{
+                        color: red;
+                    }
+                    <br>
+                    p{
+                        color: red; /*Set text color to red*/
+                    }
+                </code>
+            </p>
+        </section>
+        <section class="main-section" id="Colors">
+            <header>Colors</header>
+            <p>
+                Colors are specified using predefinted color names, or RGB, HEX, HSL, RGBA, HSLA values
+            </p>
+            <h3>CSS Color Names</h3>
+            <p>
+                In CSS, a color can be specified by using a predefined color name: Tomato, Orange, Dodgerblue, MediumSeaGreen, Gray, SlateBlue, Voilet, LightGray...
+            </p>
+            <h3>CSS Background Color</h3>
+            <p>
+                You can set the background color for HTML elements:<br>
+                <code>
+                    h1 {
+                        background-color: Dodgerblue;
+                    }
+                </code>
+            </p>
+            <h3>CSS Border Color</h3>
+            <p>
+                You can set the color of borders:<br>
+                <code>
+                    h1 {
+                        border: 2px solid Tomato;
+                    }
+                </code>
+            </p>
+            <h3>CSS Color Values</h3>
+            <p>
+                In CSS, colors can also be specified using RGB values, HEX values, HSL values, RGBA values and HSLA values.
+            </p>
+            <p>
+                Same as color name "Tomato":
+                <ul>
+                    <li>rgb(255, 99, 71)</li>
+                    <li>#ff6347</li>
+                    <li>hsl(9, 100%, 64%)</li>
+                </ul>
+            </p>
+            <p>
+                Same as color name "Tomato", but 50% transparent:
+                <ul>
+                    <li>rgba(255, 99, 71, 0.5)</li>
+                    <li>hsla(9, 100%, 64%, 0.5)</li>
+                </ul>
+            </p>
+            <h3>CSS RGB Colors</h3>
+            <p>
+                An RGB color value represents RED, GREEN, and BLUE light sources.
+            </p>
+            <h3>RGB Vale</h3>
+            <p>
+                In CSS, a color can be specified as an RGB value, using this formula:
+
+                rgb(red, green, blue)
+
+                Each parameter (red, green, and blue) defines the intensity of the color between 0 and 255.
+
+                For example, rgb(255, 0, 0) is displayed as red, because red is set to its highest value (255) and the others are set to 0.
+
+                To display black, set all color parameters to 0, like this: rgb(0, 0, 0).
+
+                To display white, set all color parameters to 255, like this: rgb(255, 255, 255).
+            </p>
+            <p>
+                Shades of gray are often defined using equal values for all the 3 light sources:
+                <ul>
+                    <li>rgb(60, 60, 60)</li>
+                    <li>rgb(90, 90, 90)</li>
+                    <li>rgb(120, 120, 120)</li>
+                    <li>rgb(180, 180, 180)</li>
+                    <li>rgb(210, 210, 210)</li>
+                    <li>rgb(240, 240, 240)</li>
+                </ul>
+            </p>
+            <h3>RGBA Value</h3>
+            <p>
+                RGBA color values are an extension of RGB color values with an alpha channel - which specifies the opacity for a color.
+
+                An RGBA color value is specified with:
+
+                rgba(red, green, blue, alpha)
+
+                The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all)
+            </p>
+            <h3>HEX Value</h3>
+            <p>
+                In CSS, a color can be specified using a hexadecimal value in the form:
+                <br>
+                #rrggbb
+                <br>
+                Where rr (red), gg (green) and bb (blue) are hexadecimal values between 00 and ff (same as decimal 0-255).
+                <br>
+                For example, #ff0000 is displayed as red, because red is set to its highest value (ff) and the others are set to the lowest value (00).
+                <br>
+                To display black, set all values to 00, like this: #000000.
+                <br>
+                To display white, set all values to ff, like this: #ffffff.
+            </p>
+            <h3>Example</h3>
+            <ul>
+                <li>#ff0000</li>
+                <li>#0000ff</li>
+                <li>#3cb371</li>
+                <li>#ee82ee</li>
+                <li>#ffa500</li>
+                <li>#6a5acd</li>
+            </ul>
+            <h3>3 Digit HEX Value</h3>
+            <p>
+                Sometimes you will see a 3-digit hex code in the CSS source.
+
+                The 3-digit hex code is a shorthand for some 6-digit hex codes.
+
+                The 3-digit hex code has the following form:
+                <br>
+                #rgb
+                <br>
+                Where r, g, and b represent the red, green, and blue components with values between 0 and f.
+
+                The 3-digit hex code can only be used when both the values (RR, GG, and BB) are the same for each component. So, if we have #ff00cc, it can be written like this: #f0c
+            </p>
+            <h3>HSL Value</h3>
+            <p>
+                In CSS, a color can be specified using hue, saturation, and lightness (HSL) in the form:<br>
+
+                hsl(hue, saturation, lightness)<br>
+
+                Hue is a degree on the color wheel from 0 to 360. 0 is red, 120 is green, and 240 is blue.
+
+                Saturation is a percentage value. 0% means a shade of gray, and 100% is the full color.
+
+                Lightness is also a percentage. 0% is black, 50% is neither light or dark, 100% is white
+            </p>
+            <h3>Example</h3>
+            <ol>
+                <li>hsl(0, 100%, 50%)</li>
+                <li>hsl(240, 100%, 50%)</li>
+                <li>hsl(147, 50%, 47%)</li>
+                <li>hsl(300, 76%, 72%)</li>
+                <li>hsl(39, 100%, 50%)</li>
+                <li>hsl(248, 53%, 58%)</li>
+            </ol>
+            <h3>Saturation</h3>
+            <p>
+                Saturation can be described as the intensity of a color.
+
+                100% is pure color, no shades of gray.
+
+                50% is 50% gray, but you can still see the color.
+
+                0% is completely gray; you can no longer see the color
+            </p>
+            <ul>
+                <li>hsl(0, 100%, 50%)</li>
+                <li>hsl(0, 80%, 50%)</li>
+                <li>hsl(0, 60%, 50%)</li>
+                <li>hsl(0, 40%, 50%)</li>
+                <li>hsl(0, 20%, 50%)</li>
+                <li>hsl(0, 0%, 50%)</li>
+            </ul>
+            
+            <h3>Lightness</h3>
+            <p>
+                The lightness of a color can be described as how much light you want to give the color, <br>where 0% means no light (black), 50% means 50% light (neither dark nor light) and 100% means full lightness (white).
+            </p>
+            <ul>
+                <li>hsl(0, 100%, 0%)</li>
+                <li>hsl(0, 100%, 25%)</li>
+                <li>hsl(0, 100%, 50%)</li>
+                <li>hsl(0, 100%, 75%)</li>
+                <li>hsl(0, 100%, 90%)</li>
+                <li>hsl(0, 100%, 100%)</li>
+            </ul>
+            <h3>HSLA Value</h3>
+            <p>
+                HSLA color values are an extension of HSL color values with an alpha channel - which specifies the opacity for a color.<br>
+
+                An HSLA color value is specified with:<br>
+
+                hsla(hue, saturation, lightness, alpha)<br>
+
+                The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all)
+            </p>
+        </section>
+        <section class="main-section" id="Backgrounds">
+            <header>Backgrounds</header>
+            <p>
+                The CSS background properties are used to add background effects for elements
+            </p>
+            <p>
+                In these chapters, you will learn about the following CSS background properties:
+            </p>
+            <ul>
+                <li>background-color</li>
+                <li>background-image</li>
+                <li>background-repeat</li>
+                <li>background-attachment</li>
+                <li>background-position</li>
+                <li>background (shorthand property)</li>
+            </ul>
+            <h3>CSS background-color</h3>
+            <p>
+                The background-color property specifies the background color of an element<br>
+                <code>
+                    body {
+                        background-color: lightblue;
+                    }
+                </code>
+            </p>
+            <p>
+                With CSS, a color is most often specified by:
+            </p>
+            <ul>
+                <li>a valid color name - like "red"</li>
+                <li>a HEX value - like "#ff0000"</li>
+                <li>an RGB value - like "rgb(255,0,0)"</li>
+            </ul>
+            <h3>Opacity / Transparency</h3>
+            <p>
+                The opacity property specifies the opacity/transparency of an element. It can take a value from 0.0 - 1.0. The lower value, the more transparent<br>
+                <code>
+                    div {
+                        background-color: green;<br>
+                        opacity: 0.3;
+                    }
+                </code>
+            </p>
+            <h3>Transparency using RGBA</h3>
+            <p>
+                If you do not want to apply opacity to child elements, like in our example above, use RGBA color values
+            </p>
+            <p>
+                You learned from our CSS Colors Chapter, that you can use RGB as a color value. In addition to RGB, you can use an RGB color value with an alpha channel (RGBA) - which specifies the opacity for a color.
+
+                An RGBA color value is specified with: rgba(red, green, blue, alpha). The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (fully opaque).<br>
+                <code>
+                    div {
+                        background: rgba(0, 128, 0, 0.3) /* Green background with 30% opacity */
+                    }
+                </code>
+            </p>
+            <h3>CSS background-image</h3>
+            <p>
+                The background-image property specifies an image to use as the background of an element.
+
+                By default, the image is repeated so it covers the entire element<br>
+                <code>
+                    body {
+                        background-image: url("paper.gif");
+                      }
+                </code>
+            </p>
+            <p>
+                The background image can also be set for specific elements, like the &lt;p&gt; element:<br>
+                    <code>
+                        p {
+                            background-image: url("paper.gif");
+                          }
+                    </code>
+            </p>
+            <h3>CSS background-repeat</h3>
+            <p>
+                By default, the background-image property repeats an image both horizontally and vertically.
+
+                Some images should be repeated only horizontally or vertically, or they will look strange<br>
+                <code>
+                    body {
+                        background-image: url("gradient_bg.png");
+                      }
+                </code>
+            </p>
+            <p>
+                If the image above is repeated only horizontally (background-repeat: repeat-x;), the background will look better. To repeat an image vertically, set background-repeat: repeat-y;<br>
+                <code>
+                    body {
+                        background-image: url("gradient_bg.png");<br>
+                        background-repeat: repeat-x;
+                      }
+                </code>
+            </p>
+            <h3>CSS background-repeat: no-repeat</h3>
+            <p>
+                Showing the background image only once is also specified by the background-repeat property
+            </p>
+            <h3>CSS background-position</h3>
+            <p>
+                The background-position property is used to specify the position of the background image<br>
+                <code>
+                    body {
+                        background-image: url("img_tree.png");<br>
+                        background-repeat: no-repeat;<br>
+                        background-position: right top;
+                      }
+                </code>
+            </p>
+            <h3>CSS background-attachment</h3>
+            <p>
+                The background-attachment property specifies whether the background image should scroll or be fixed (will not scroll with the rest of the page)<br>
+                <code>
+                    body {
+                        background-image: url("img_tree.png");<br>
+                        background-repeat: no-repeat;<br>
+                        background-position: right top;<br>
+                        background-attachment: fixed;
+                      }
+                </code>
+                <code>
+                    body {
+                        background-image: url("img_tree.png");<br>
+                        background-repeat: no-repeat;<br>
+                        background-position: right top;<br>
+                        background-attachment: scroll;
+                      }
+                </code>
+            </p>
+            <h3>CSS background - Shorthand property</h3>
+            <p>
+                To shorten the code, it is also possible to specify all the background properties in one single property. This is called a shorthand property.<br>
+                <code>
+                    body {
+                        background: #ffffff url("img_tree.png") no-repeat right top;
+                      }
+                </code>
+            </p>
+            <p>
+                When using the shorthand property the order of the property values is:
+            </p>
+            <ul>
+                <li>background-color</li>
+                <li>background-image</li>
+                <li>background-repeat</li>
+                <li>background-attachment</li>
+                <li>background-position</li>
+            </ul>
+        </section>
+        <section class="main-section" id="Borders">
+            <header>Borders</header>
+            <p>
+                The CSS border properties allow you to specify the style, width, and color of an element's border.
+            </p>
+            <h3>CSS Border Style</h3>
+            <p>
+                The border-style property specifies what kind of border to display.<br>
+
+                The following values are allowed
+            </p>
+            <ul>
+                <li>dotted - Defines a dotted border</li>
+                <li>dashed - Defines a dashed border</li>
+                <li>solid - Defines a solid border</li>
+                <li>double - Defines a double border</li>
+                <li>groove - Defines a 3D grooved border. The effect depends on the border-color value</li>
+                <li>ridge - Defines a 3D ridged border. The effect depends on the border-color value</li>
+                <li>inset - Defines a 3D inset border. The effect depends on the border-color value</li>
+                <li>outset - Defines a 3D outset border. The effect depends on the border-color value</li>
+                <li>none - Defines no border</li>
+                <li>hidden - Defines a hidden border</li>
+            </ul>
+            <p>
+                The border-style property can have from one to four values (for the top border, right border, bottom border, and the left border)
+            </p>
+            <h3>CSS Border Width</h3>
+            <p>
+                The border-width property specifies the width of the four borders.<br>
+
+                The width can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined values: thin, medium, or thick
+            </p>
+            <code>
+                p.one {
+                    border-style: solid;
+                    border-width: 5px;
+                }
+            </code>
+            <h3>Specific Side Widths</h3>
+            <p>
+                The border-width property can have from one to four values (for the top border, right border, bottom border, and the left border):
+            </p>
+            <code>
+                p.one {
+                    border-style: solid;<br>
+                    border-width: 5px 20px; /* 5px top and bottom, 20px on the sides */
+                  }<br>
+                p.two {
+                    border-style: solid;<br>
+                    border-width: 25px 10px 4px 35px; /* 25px top, 10px right, 4px bottom and 35px left */
+                  }
+            </code>
+            <h3>CSS Border Color</h3>
+            <p>
+                The border-color property is used to set the color of the four borders<br>
+                The color can be set by:
+            </p>
+            <ul>
+                <li>name - specify a color name, like "red"</li>
+                <li>HEX - specify a HEX value, like "#ff0000"</li>
+                <li>RGB - specify a RGB value, like "rgb(255,0,0)"</li>
+                <li>HSL - specify a HSL value, like "hsl(0, 100%, 50%)"</li>
+                <li>transparent</li>
+            </ul>
+            <code>
+                p.one {
+                    border-style: solid;<br>
+                    border-color: red;
+                  }
+            </code>
+            <h3>CSS Border - Shorthand Property</h3>
+            <p>Like you saw in the previous page, there are many properties to consider when dealing with borders.
+
+                To shorten the code, it is also possible to specify all the individual border properties in one property.
+
+                The border property is a shorthand property for the following individual border properties:
+            </p>
+            <ul>
+                <li>border-width</li>
+                <li>border-style (required)</li>
+                <li>border-color</li>
+            </ul>
+            <code>
+                p {
+                    border: 5px solid red;
+                  }
+            </code>
+            <h3>CSS Rounded Borders</h3>
+            <p>
+                The border-radius property is used to add rounded borders to an element:
+            </p>
+            <code>
+                p {
+                    border: 2px solid red;<br>
+                    border-radius: 5px;
+                  }
+            </code>
+        </section>
+        <section class="main-section" id="Margins">
+            <header>Margins</header>
+            <p>
+                Margins are used to create space around elements, outside of any defined borders.<br>
+                With CSS, you have full control over the margins. There are properties for setting the margin for each side of an element (top, right, bottom, and left)
+            </p>
+            <h3>Margin - Individual Sides</h3>
+            <p>
+                CSS has properties for specifying the margin for each side of an element:
+            </p>
+            <ul>
+                <li>margin-top</li>
+                <li>margin-right</li>
+                <li>margin-bottom</li>
+                <li>margin-left</li>
+            </ul>
+            <p>
+                All the margin properties can have the following values:
+            </p>
+            <ul>
+                <li>auto - the browser calculates the margin</li>
+                <li>length - specifies a margin in px, pt, cm, etc.</li>
+                <li>% - specifies a margin in % of the width of the containing element</li>
+                <li>inherit - specifies that the margin should be inherited from the parent element</li>
+            </ul>
+            <code>
+                p {
+                    margin-top: 100px;<br>
+                    margin-bottom: 100px;<br>
+                    margin-right: 150px;<br>
+                    margin-left: 80px;
+                  }
+            </code>
+            <h3>Margin - Shorthand Property</h3>
+            <p>
+                To shorten the code, it is possible to specify all the margin properties in one property.<br>
+                If the margin property has four values:<br>
+                margin: 25px 50px 75px 100px;
+            </p>
+            <ul>
+                <li>top margin is 25px</li>
+                <li>right margin is 50px</li>
+                <li>bottom margin is 75px</li>
+                <li>left margin is 100px</li>
+            </ul>
+            <p>
+                If the margin property has three values:<br>
+                margin: 25px 50px 75px;
+            </p>
+            <ul>
+                <li>top margin is 25px</li>
+                <li>right and left margins are 50px</li>
+                <li>bottom margin is 75px</li>
+            </ul>
+            <p>
+                If the margin property has two values:<br>
+                margin: 25px 50px;
+            </p>
+            <ul>
+                <li>top and bottom margins are 25px</li>
+                <li>right and left margins are 50px</li>
+            </ul>
+            <p>
+                If the margin property has one value:<br>
+                margin: 25px;
+            </p>
+            <ul>
+                <li>all four margins are 25px</li>
+            </ul>
+        </section>
+        <section class="main-section" id="Padding">
+            <header>Padding</header>
+            <p>
+                Padding is used to create space around an element's content, inside of any defined borders. The CSS padding properties are used to generate space around an element's content, inside of any defined borders.
+
+                With CSS, you have full control over the padding. There are properties for setting the padding for each side of an element (top, right, bottom, and left)
+            </p>
+            <h3>Padding - Individual Sides</h3>
+            <p>
+                CSS has properties for specifying the padding for each side of an element:
+            </p>
+            <ul>
+                <li>padding-top</li>
+                <li>padding-right</li>
+                <li>padding-bottom</li>
+                <li>padding-left</li>
+            </ul>
+            <p>
+                All the padding properties can have the following values:
+            </p>
+            <ul>
+                <li>length - specifies a padding in px, pt, cm, etc.</li>
+                <li>% - specifies a padding in % of the width of the containing element</li>
+                <li>inherit - specifies that the padding should be inherited from the parent element</li>
+            </ul>
+            <h3>Padding - Shorthand Property</h3>
+            <p>
+                To shorten the code, it is possible to specify all the padding properties in one property.
+
+                The padding property is a shorthand property for the following individual padding properties. If the padding property has four values:<br>
+                padding: 25px 50px 75px 100px;
+            </p>
+            <ul>
+                <li>top padding is 25px</li>
+                <li>right padding is 50px</li>
+                <li>bottom padding is 75px</li>
+                <li>left padding is 100px</li>
+            </ul>
+            <p>
+                If the padding property has three values:<br>
+                padding: 25px 50px 75px;
+            </p>
+            <ul>
+                <li>top padding is 25px</li>
+                <li>right and left paddings are 50px</li>
+                <li>bottom padding is 75px</li>
+            </ul>
+            <p>
+                If the padding property has two values:<br>
+                padding: 25px 50px;
+            </p>
+            <ul>
+                <li>top and bottom paddings are 25px</li>
+                <li>right and left paddings are 50px</li>
+            </ul>
+            <p>
+                If the padding property has one value:<br>
+                padding: 25px;
+            </p>
+            <ul>
+                <li>all four paddings are 25px</li>
+            </ul>
+            <h3>Padding and Element Width</h3>
+            <p>
+                The CSS width property specifies the width of the element's content area. The content area is the portion inside the padding, border, and margin of an element (the box model).
+
+                So, if an element has a specified width, the padding added to that element will be added to the total width of the element. This is often an undesirable result
+            </p>
+            <h3>Example</h3>
+            <p>
+                Here, the &lt;div&gt; element is given a width of 300px. However, the actual width of the &lt;div&gt; element will be 350px (300px + 25px of left padding + 25px of right padding):
+            </p>
+            <code>
+                div {
+                    width: 300px;<br>
+                    padding: 25px;
+                  }
+            </code>
+            <p>
+                To keep the width at 300px, no matter the amount of padding, you can use the box-sizing property. This causes the element to maintain its actual width; if you increase the padding, the available content space will decrease
+            </p>
+            <code>
+                div {
+                    width: 300px;<br>
+                    padding: 25px;<br>
+                    box-sizing: border-box;
+                  }
+            </code>
+        </section>
+        <section class="main-section" id="Height_width">
+            <header>Height width</header>
+            <p>The height and width properties are used to set the height and width of an element.
+
+                The height and width properties do not include padding, borders, or margins. It sets the height/width of the area inside the padding, border, and margin of the element.<br>
+                The height and width properties may have the following values:
+            </p>
+            <ul>
+                <li>auto - This is default. The browser calculates the height and width</li>
+                <li>length - Defines the height/width in px, cm, etc</li>
+                <li>% - Defines the height/width in percent of the containing block</li>
+                <li>initial - Sets the height/width to its default value</li>
+                <li>inherit - The height/width will be inherited from its parent value</li>
+            </ul>
+            <code>
+                div {
+                    height: 100px;<br>
+                    width: 500px;<br>
+                    background-color: powderblue;
+                  }
+            </code>
+            <h3>Max-Width</h3>
+            <p>
+                The max-width property is used to set the maximum width of an element.
+
+                The max-width can be specified in length values, like px, cm, etc., or in percent (%) of the containing block, or set to none (this is default. Means that there is no maximum width).
+            </p>
+        </section>
+        <section class="main-section" id="Box_model">
+            <header>Box model</header>
+            <p>
+                In CSS, the term "box model" is used when talking about design and layout.
+
+                The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content<br>
+            </p>
+            <ul>
+                <li>Content - The content of the box, where text and images appear</li>
+                <li>Padding - Clears an area around the content. The padding is transparent</li>
+                <li>Border - A border that goes around the padding and content</li>
+                <li>Margin - Clears an area outside the border. The margin is transparent</li>
+            </ul>
+            <p>
+                The box model allows us to add a border around elements, and to define space between elements. 
+            </p>
+            <code>
+                div {
+                    width: 300px;<br>
+                    border: 15px solid green;<br>
+                    padding: 50px;<br>
+                    margin: 20px;
+                  }
+            </code>
+            <p>
+                The total width of an element should be calculated like this:<br>
+
+                Total element width = width + left padding + right padding + left border + right border + left margin + right margin<br>
+
+                The total height of an element should be calculated like this:<br>
+
+                Total element height = height + top padding + bottom padding + top border + bottom border + top margin + bottom margin
+            </p>
+        </section>
+        <section class="main-section" id="Reference">
+            <header>Reference</header>
+            <p>
+                Context taken from <a href="http://https://www.w3schools.com/css/default.asp">w3schools</a>
+            </p>
+        </section>
+        <footer>
+            <p>
+                Copyright &copy; Lizalise Designs&#9802
+            </p>
+        </footer>
+    </main>
+</body>
+</html>
